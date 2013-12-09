@@ -26,11 +26,11 @@ body {
 	-webkit-user-select: none;
 	background-color: black;
 }
-.column:nth-child(1) { background-color:#E0E0E0; }
-.column:nth-child(2) { background-color:#C8C8C8; }
-.column:nth-child(3) { background-color:#B0B0B0; }
-.column:nth-child(4) { background-color:#A0A0A0; }
-.column:nth-child(5) { background-color:#E6B800; }
+.column:nth-child(1) { background-color:#E0E0E0; -webkit-animation-duration:3s;}
+.column:nth-child(2) { background-color:#C8C8C8; -webkit-animation-duration:4s;}
+.column:nth-child(3) { background-color:#B0B0B0; -webkit-animation-duration:5s;}
+.column:nth-child(4) { background-color:#A0A0A0; -webkit-animation-duration:6s;}
+.column:nth-child(5) { background-color:#E6B800; -webkit-animation-duration:7s;}
 
 .sticky {
 	min-width:100px;
@@ -70,3 +70,34 @@ body {
 	right: 20px;
 	background-size: 100%;
 }
+
+@-webkit-keyframes slide {
+	0%   {-webkit-transform:translateX(0px); opacity:1;}
+	45%  {-webkit-transform:translateX(1000px); opacity:1;}
+	50%  {-webkit-transform:translateX(1100px); opacity:0;}
+	55%  {-webkit-transform:translateX(-1100px); opacity:0;}
+	60%  {-webkit-transform:translateX(-1000px); opacity:1;}
+	100% {-webkit-transform:translateX(0px); opacity:1;}
+}
+
+.slide {
+	-webkit-animation-name:slide;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes fly {
+	0%   {-webkit-transform:translateX(0px) translateY(0px) rotateY(0deg); opacity:1}
+	45%  {-webkit-transform:translateX(3000px) translateY(1000px) rotateY(1080deg); opacity:1}
+	50%  {-webkit-transform:translateX(3000px) translateY(1000px) rotateY(1080deg); opacity:0}
+	55%  {-webkit-transform:translateX(-3000px) translateY(-1000px) rotateY(-1080deg); opacity:0}
+	60%  {-webkit-transform:translateX(-3000px) translateY(-1000px) rotateY(-1080deg); opacity:1}
+	100% {-webkit-transform:translateX(0px) translateY(0px) rotateY(0deg); opacity:1}
+}
+
+/*.fly {
+	-webkit-animation-name:fly;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:linear;
+}
+*/
