@@ -12,6 +12,7 @@ var dragged = "";
 var screensaverTimer;
 
 var ssDelay = eval(1000 * 60 * 30);
+var ssResume = eval(1000 * 60 * 60);
 
 /*
 * Revision:
@@ -20,6 +21,8 @@ var ssDelay = eval(1000 * 60 * 30);
 *     Runtime function. Separate handlers fn so we can call again if we remove/clone HTML
 */
 $(document).ready(function(){
+      setupOrigami();
+
       SetEventHandlers();
 });
 function SetEventHandlers(){
@@ -132,14 +135,11 @@ var screensaverTimer2;
 */
 function resetScreensaver() {
       window.clearTimeout(screensaverTimer2);
-      $(".column").removeClass("slide");
-      $(".sticky").css({"-webkit-animation":""});
+    $(".screensaver").hide()
+
       screensaverTimer = setTimeout(function(){
-            $(".column").addClass("slide");
-            $(".sticky").each(function(i){
-                  $(this).css({"-webkit-animation":"fly "+eval(i+4)+"s linear infinite"});
-            });   
-            screensaverTimer2 = setTimeout(function(){resetScreensaver()}, ssDelay);
+            $(".screensaver").show();
+             screensaverTimer2 = setTimeout(function(){resetScreensaver()}, ssResume);
       },ssDelay);      
 }
 
