@@ -57,6 +57,10 @@ function SetEventHandlers(){
             zIndexControl($(this));
       });
 
+      $(".sticky::before").on("touchstart", function(){
+            console.log("test");
+      });
+
       $("body").on("touchstart", function(){ window.clearTimeout(screensaverTimer); resetScreensaver()});
 
       resetScreensaver();
@@ -107,6 +111,7 @@ function resizeText(id){
 function dragSticky(elem, e) {
       elem.css({"left":eval(e.touches[0].pageX-elem.get(0).offsetWidth/2)+"px", "top":eval(e.touches[0].pageY-elem.get(0).offsetHeight/2)+"px"});
       zIndexControl(elem);
+      clearSelection();
 }
 
 /*
@@ -141,5 +146,21 @@ function resetScreensaver() {
             $(".screensaver").show();
              screensaverTimer2 = setTimeout(function(){resetScreensaver()}, ssResume);
       },ssDelay);      
+}
+
+
+/*
+* Revision:
+*     SW - 5/5/14
+* Description:
+*     Removes selection in HTML text input/text area
+*     http://stackoverflow.com/questions/6562727/is-there-a-function-to-deselect-all-text-using-javascript
+*/
+function clearSelection() {
+    if ( document.selection ) {
+        document.selection.empty();
+    } else if ( window.getSelection ) {
+        window.getSelection().removeAllRanges();
+    }
 }
 
