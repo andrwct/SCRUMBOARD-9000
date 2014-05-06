@@ -27,7 +27,8 @@ $(document).ready(function(){
 });
 function SetEventHandlers(){
 	$(".column").on("touchstart", function(e){
-		t1=e.touches[0];
+            //Double Tap
+            t1=e.touches[0];
 		if(touchTimeout){
             	t1x=t1.pageX;
             	t1y=t1.pageY;
@@ -35,10 +36,14 @@ function SetEventHandlers(){
             	setTimeout(function(){touchTimeout=true},2000);
             }
             else {
-			if(Math.abs(t1x-t1.pageX)<20 && Math.abs(t1y-t1.pageY)<20){
+			if(Math.abs(t1x-t1.pageX)<50 && Math.abs(t1y-t1.pageY)<50){
                         createSticky();
                   };
             }
+            //Shift||Alt + Click
+            var evt = e || window.event;
+            if(evt.shiftKey || evt.altKey)
+                  createSticky();
 	});
       
       $(".frame").on("touchmove", function(e){            
@@ -57,9 +62,7 @@ function SetEventHandlers(){
             zIndexControl($(this));
       });
 
-      $(".sticky::before").on("touchstart", function(){
-            console.log("test");
-      });
+   
 
       $("body").on("touchstart", function(){ window.clearTimeout(screensaverTimer); resetScreensaver()});
 
@@ -85,6 +88,7 @@ function createSticky() {
       zIndexControl(newDiv);
       $(".frame").append(newDiv);
       txtID++;
+      touchTimeout=true;
 }
 
 /*
