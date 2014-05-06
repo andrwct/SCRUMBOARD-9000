@@ -27,7 +27,8 @@ $(document).ready(function(){
 });
 function SetEventHandlers(){
 	$(".column").on("touchstart", function(e){
-		t1=e.touches[0];
+            //Double Tap
+            t1=e.touches[0];
 		if(touchTimeout){
             	t1x=t1.pageX;
             	t1y=t1.pageY;
@@ -35,10 +36,14 @@ function SetEventHandlers(){
             	setTimeout(function(){touchTimeout=true},2000);
             }
             else {
-			if(Math.abs(t1x-t1.pageX)<20 && Math.abs(t1y-t1.pageY)<20){
+			if(Math.abs(t1x-t1.pageX)<50 && Math.abs(t1y-t1.pageY)<50){
                         createSticky();
                   };
             }
+            //Shift||Alt + Click
+            var evt = e || window.event;
+            if(evt.shiftKey || evt.altKey)
+                  createSticky();
 	});
       
       $(".frame").on("touchmove", function(e){            
@@ -56,6 +61,8 @@ function SetEventHandlers(){
       $(".sticky").on("touchstart", function(){
             zIndexControl($(this));
       });
+
+   
 
       $("body").on("touchstart", function(){ window.clearTimeout(screensaverTimer); resetScreensaver()});
 
@@ -81,6 +88,7 @@ function createSticky() {
       zIndexControl(newDiv);
       $(".frame").append(newDiv);
       txtID++;
+      touchTimeout=true;
 }
 
 /*
@@ -107,6 +115,7 @@ function resizeText(id){
 function dragSticky(elem, e) {
       elem.css({"left":eval(e.touches[0].pageX-elem.get(0).offsetWidth/2)+"px", "top":eval(e.touches[0].pageY-elem.get(0).offsetHeight/2)+"px"});
       zIndexControl(elem);
+      clearSelection();
 }
 
 /*
@@ -141,5 +150,21 @@ function resetScreensaver() {
             $(".screensaver").show();
              screensaverTimer2 = setTimeout(function(){resetScreensaver()}, ssResume);
       },ssDelay);      
+}
+
+
+/*
+* Revision:
+*     SW - 5/5/14
+* Description:
+*     Removes selection in HTML text input/text area
+*     http://stackoverflow.com/questions/6562727/is-there-a-function-to-deselect-all-text-using-javascript
+*/
+function clearSelection() {
+    if ( document.selection ) {
+        document.selection.empty();
+    } else if ( window.getSelection ) {
+        window.getSelection().removeAllRanges();
+    }
 }
 
