@@ -3,7 +3,7 @@ body {
 }
 
 .frame {
-	height:1080px;
+	height:800px;
 	width:1920px;
 	background-color:white;
 	position:absolute;
@@ -73,12 +73,22 @@ body {
 }
 
 .trash {
-	background-image: url("trash.png");
+	background-image: url("../res/trash.png");
 	bottom: 20px;
 	height: 52px;
 	width: 47px;
 	position: absolute;
 	right: 20px;
+	background-size: 100%;
+}
+
+.save {
+	background-image: url("../res/save.png");
+	bottom: 20px;
+	height: 52px;
+	width: 47px;
+	position: absolute;
+	right: 85px;
 	background-size: 100%;
 }
 
