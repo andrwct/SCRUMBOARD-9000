@@ -4,11 +4,13 @@
 <html>
 <head>
     <title>SCRUMBOARD 9000</title>
-    <script src="lib/zepto.min.js"></script>
+    <script src="lib/jquery-2.1.1.min.js"></script>
+    <script src="lib/jquery-ui-1.10.4.custom.min.js"></script>
     <script src="lib/touche-min.js"></script>
     <script src="lib/origami.js"></script>
     <script src="lib/app.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="css/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">    
 </head>
 <body>
     <div class="frame">
@@ -27,11 +29,18 @@
         <div class="column">
             COMPLETE
             <div class="save"></div>
-            <div class="trash"></div>
         </div>
     </div>
     <div class="screensaver">
         <canvas width="1920" height="1080"></canvas>
+    </div>
+    <div class="stickyTemplate">
+        <div class="stickySeparatorBar"></div>
+        <input type="text" class="stickyTaskOwner"/>
+        <textarea class="stickyNote" spellcheck="false"></textarea>
+        <input type="text" class="stickyDueDate"/>
+        <div class="stickyClose"></div>
+        <div class="stickyTab"></div>
     </div>
 </body>
 </html>
