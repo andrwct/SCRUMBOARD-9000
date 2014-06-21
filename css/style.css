@@ -7,76 +7,70 @@
     src: local('Indie Flower'), local('IndieFlower'), url(http://themes.googleusercontent.com/static/fonts/indieflower/v5/10JVD_humAd5zP2yrFqw6nhCUOGz7vYGh680lGh-uXM.woff) format('woff');
 }
 
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat-Bold'), url(http://themes.googleusercontent.com/static/fonts/montserrat/v4/IQHow_FEYlDC4Gzy_m8fcgFhaRv2pGgT5Kf0An0s4MM.woff) format('woff');
+}
+
 body {
     overflow: hidden;
 }
 
 .frame {
-	height:1080px;
-	width:1920px;
-	background-color:white;
-	position:absolute;
-	-webkit-perspective:900px;
-	top:0;
-	left:0;
-	font-family:"Trebuchet MS";
-	font-style:italic;
-	color:white;
+    height: 1080px;
+    width: 1920px;
+    background-color: white;
+    position: absolute;
+    -webkit-perspective: 900px;
+    top: 0;
+    left: 0;        
+    color: white;
 }
 
 .column {
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
+    font-family: Montserrat;
     user-select: none;
     float: left;
     width: 19.85%;
     height: 100%;
-    border: 1px solid white;
-    background-color: black;
+    border: 1px solid #999;
+    text-shadow: #858585 -2px 0;
     text-align: center;
     font-weight: bold;
-    font-size: 69px;
+    font-size: 42px;
+    padding-top: 10px;
 }
 
+.column {
+    background-color: #C8C8C8;
+    border-top: 20px solid;
+}
+
+
     .column:nth-child(1) {
-        background-color: #E0E0E0;
-        -moz-animation-duration: 3s;
-        -o-animation-duration: 3s;
-        -webkit-animation-duration: 3s;
-        animation-duration: 3s;
+        border-top-color: #FFD643;
     }
 
     .column:nth-child(2) {
-        background-color: #C8C8C8;
-        -moz-animation-duration: 4s;
-        -o-animation-duration: 4s;
-        -webkit-animation-duration: 4s;
-        animation-duration: 4s;
+        border-top-color: #FF9933;
     }
 
     .column:nth-child(3) {
-        background-color: #B0B0B0;
-        -moz-animation-duration: 5s;
-        -o-animation-duration: 5s;
-        -webkit-animation-duration: 5s;
-        animation-duration: 5s;
+        border-top-color: #E74D4D;
     }
 
     .column:nth-child(4) {
-        background-color: #A0A0A0;
-        -moz-animation-duration: 6s;
-        -o-animation-duration: 6s;
-        -webkit-animation-duration: 6s;
-        animation-duration: 6s;
+        border-top-color: #77D6F1;
     }
 
     .column:nth-child(5) {
-        background-color: #E6B800;
-        -moz-animation-duration: 7s;
-        -o-animation-duration: 7s;
-        -webkit-animation-duration: 7s;
-        animation-duration: 7s;
+        border-top-color: #A2CF48;
+        background-color: #9f9f9f;
     }
 
 .stickyTemplate {
@@ -89,8 +83,28 @@ body {
     min-width: 100px;
     min-height: 100px;
     border-left: 5px solid rgba(0, 0, 0, 0.4);
-    background-color: #FF9933;
+    /*background-color: #FF9933;*/
 }
+
+    .stickyContainer[data-col="0"] {
+        background-color: #FFD643;
+    }
+
+    .stickyContainer[data-col="1"] {
+        background-color: #FF9933;
+    }
+
+    .stickyContainer[data-col="2"] {
+        background-color: #E74D4D;
+    }
+
+    .stickyContainer[data-col="3"] {
+        background-color: #77D6F1;
+    }
+
+    .stickyContainer[data-col="4"] {
+        background-color: #A2CF48;
+    }
 
     .stickyContainer * {
         position: absolute;
@@ -107,6 +121,13 @@ body {
 }
 
 .stickyTab {
+    top: 100px;
+    left: -10px;
+    background: red;
+    border: 5px solid black;
+    width: 50px;
+    height: 50px;
+
 }
 
 .stickyDueDate {
