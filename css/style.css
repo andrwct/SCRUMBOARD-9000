@@ -8,10 +8,10 @@
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Montserrat-Bold'), url(http://themes.googleusercontent.com/static/fonts/montserrat/v4/IQHow_FEYlDC4Gzy_m8fcgFhaRv2pGgT5Kf0An0s4MM.woff) format('woff');
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Montserrat-Bold'), url(http://themes.googleusercontent.com/static/fonts/montserrat/v4/IQHow_FEYlDC4Gzy_m8fcgFhaRv2pGgT5Kf0An0s4MM.woff) format('woff');
 }
 
 body {
@@ -21,11 +21,10 @@ body {
 .frame {
     height: 1080px;
     width: 1920px;
-    background-color: white;
+    background-color: #999;
     position: absolute;
-    -webkit-perspective: 900px;
     top: 0;
-    left: 0;        
+    left: 0;
     color: white;
 }
 
@@ -38,19 +37,15 @@ body {
     float: left;
     width: 19.85%;
     height: 100%;
-    border: 1px solid #999;
+    margin-right: 2px;
     text-shadow: #858585 -2px 0;
     text-align: center;
     font-weight: bold;
     font-size: 42px;
     padding-top: 10px;
-}
-
-.column {
     background-color: #C8C8C8;
     border-top: 20px solid;
 }
-
 
     .column:nth-child(1) {
         border-top-color: #FFD643;
@@ -79,11 +74,8 @@ body {
 
 .stickyContainer {
     position: absolute !important;
-    z-index: 5;
-    min-width: 100px;
-    min-height: 100px;
-    border-left: 5px solid rgba(0, 0, 0, 0.4);
-    /*background-color: #FF9933;*/
+    min-width: 225px;
+    min-height: 150px;
 }
 
     .stickyContainer[data-col="0"] {
@@ -110,6 +102,46 @@ body {
         position: absolute;
     }
 
+.stickyTabWell {
+    background: inherit;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.stickyTab {
+    width: 30px;
+    height: 35px;
+    left: -28px;
+    background: inherit;
+    background-position: 3px center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    border-radius: 10px 0 0 10px;
+    border-left: 3.2px solid rgba(0,0,0,0.2);
+}
+
+    .stickyTab .tabShade {
+        width: 100%;
+        height: 100%;
+        background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.35), transparent 65%);
+    }
+
+    .stickyTab[data-tabindex="0"] {
+        background-image: url(../res/images/move.png);
+        bottom: 15px;
+    }
+
+.stickyBody {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-left: 5px solid rgba(0, 0, 0, 0.28);
+    background: inherit;
+}
+
+
 .stickyClose {
     top: 10px;
     right: 10px;
@@ -118,16 +150,6 @@ body {
     height: 26px;
     background-image: url("../res/images/stickyClose.png");
     cursor: pointer;
-}
-
-.stickyTab {
-    top: 100px;
-    left: -10px;
-    background: red;
-    border: 5px solid black;
-    width: 50px;
-    height: 50px;
-
 }
 
 .stickyDueDate {
@@ -215,6 +237,66 @@ body {
     box-shadow: rgba(0,0,0,0.5) -4px 4px 10px -3px;
     cursor: pointer;
 }
+
+/* Color-shift animations */
+@-webkit-keyframes col1tocol2 {
+ from {
+   background-color: #FFD643;
+ }
+ to {
+   background-color: #FF9933;
+ }
+}
+@-webkit-keyframes col2tocol3 {
+ from {
+   background-color: #FF9933;
+ }
+ to {
+   background-color: #E74D4D;
+ }
+}
+@-webkit-keyframes col3tocol4 {
+ from {
+   background-color: #E74D4D;
+ }
+ to {
+   background-color: #77D6F1;
+ }
+}
+@-webkit-keyframes col4tocol5 {
+ from {
+   background-color: #77D6F1;
+ }
+ to {
+   background-color: #A2CF48;
+ }
+}
+
+.col1tocol2Anim {
+    -webkit-animation: col1tocol2 ease-out 1s;
+}
+.col2tocol1Anim {
+    -webkit-animation: col1tocol2 ease-out 1s reverse;
+}
+.col2tocol3Anim {
+    -webkit-animation: col2tocol3 ease-out 1s;
+}
+.col3tocol2Anim {
+    -webkit-animation: col2tocol3 ease-out 1s reverse;
+}
+.col3tocol4Anim {
+    -webkit-animation: col3tocol4 ease-out 1s;
+}
+.col4tocol3Anim {
+    -webkit-animation: col3tocol4 ease-out 1s reverse;
+}
+.col4tocol5Anim {
+    -webkit-animation: col4tocol5 ease-out 1s;
+}
+.col5tocol4Anim {
+    -webkit-animation: col4tocol5 ease-out 1s reverse;
+}
+
 
 .screensaver {
     position: absolute;
