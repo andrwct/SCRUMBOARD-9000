@@ -248,6 +248,26 @@ body {
     }
 }
 
+@-moz-keyframes col1tocol2 {
+    from {
+        background-color: #FFD643;
+    }
+
+    to {
+        background-color: #FF9933;
+    }
+}
+
+@keyframes col1tocol2 {
+    from {
+        background-color: #FFD643;
+    }
+
+    to {
+        background-color: #FF9933;
+    }
+}
+
 @-webkit-keyframes col2tocol3 {
     from {
         background-color: #FF9933;
@@ -279,59 +299,59 @@ body {
 }
 
 .col1tocol2Anim {
-    -moz-animation: col1tocol2 ease-out 1s;
-    -o-animation: col1tocol2 ease-out 1s;
-    -webkit-animation: col1tocol2 ease-out 1s;
-    animation: col1tocol2 ease-out 1s;
+    -moz-animation: col1tocol2 ease-out 0.45s;
+    -o-animation: col1tocol2 ease-out 0.45s;
+    -webkit-animation: col1tocol2 ease-out 0.45s;
+    animation: col1tocol2 ease-out 0.45s;
 }
 
 .col2tocol1Anim {
-    -moz-animation: col1tocol2 ease-out 1s reverse;
-    -o-animation: col1tocol2 ease-out 1s reverse;
-    -webkit-animation: col1tocol2 ease-out 1s reverse;
-    animation: col1tocol2 ease-out 1s reverse;
+    -moz-animation: col1tocol2 ease-out 0.45s reverse;
+    -o-animation: col1tocol2 ease-out 0.45s reverse;
+    -webkit-animation: col1tocol2 ease-out 0.45s reverse;
+    animation: col1tocol2 ease-out 0.45s reverse;
 }
 
 .col2tocol3Anim {
-    -moz-animation: col2tocol3 ease-out 1s;
-    -o-animation: col2tocol3 ease-out 1s;
-    -webkit-animation: col2tocol3 ease-out 1s;
-    animation: col2tocol3 ease-out 1s;
+    -moz-animation: col2tocol3 ease-out 0.45s;
+    -o-animation: col2tocol3 ease-out 0.45s;
+    -webkit-animation: col2tocol3 ease-out 0.45s;
+    animation: col2tocol3 ease-out 0.45s;
 }
 
 .col3tocol2Anim {
-    -moz-animation: col2tocol3 ease-out 1s reverse;
-    -o-animation: col2tocol3 ease-out 1s reverse;
-    -webkit-animation: col2tocol3 ease-out 1s reverse;
-    animation: col2tocol3 ease-out 1s reverse;
+    -moz-animation: col2tocol3 ease-out 0.45s reverse;
+    -o-animation: col2tocol3 ease-out 0.45s reverse;
+    -webkit-animation: col2tocol3 ease-out 0.45s reverse;
+    animation: col2tocol3 ease-out 0.45s reverse;
 }
 
 .col3tocol4Anim {
-    -moz-animation: col3tocol4 ease-out 1s;
-    -o-animation: col3tocol4 ease-out 1s;
-    -webkit-animation: col3tocol4 ease-out 1s;
-    animation: col3tocol4 ease-out 1s;
+    -moz-animation: col3tocol4 ease-out 0.45s;
+    -o-animation: col3tocol4 ease-out 0.45s;
+    -webkit-animation: col3tocol4 ease-out 0.45s;
+    animation: col3tocol4 ease-out 0.45s;
 }
 
 .col4tocol3Anim {
-    -moz-animation: col3tocol4 ease-out 1s reverse;
-    -o-animation: col3tocol4 ease-out 1s reverse;
-    -webkit-animation: col3tocol4 ease-out 1s reverse;
-    animation: col3tocol4 ease-out 1s reverse;
+    -moz-animation: col3tocol4 ease-out 0.45s reverse;
+    -o-animation: col3tocol4 ease-out 0.45s reverse;
+    -webkit-animation: col3tocol4 ease-out 0.45s reverse;
+    animation: col3tocol4 ease-out 0.45s reverse;
 }
 
 .col4tocol5Anim {
-    -moz-animation: col4tocol5 ease-out 1s;
-    -o-animation: col4tocol5 ease-out 1s;
-    -webkit-animation: col4tocol5 ease-out 1s;
-    animation: col4tocol5 ease-out 1s;
+    -moz-animation: col4tocol5 ease-out 0.45s;
+    -o-animation: col4tocol5 ease-out 0.45s;
+    -webkit-animation: col4tocol5 ease-out 0.45s;
+    animation: col4tocol5 ease-out 0.45s;
 }
 
 .col5tocol4Anim {
-    -moz-animation: col4tocol5 ease-out 1s reverse;
-    -o-animation: col4tocol5 ease-out 1s reverse;
-    -webkit-animation: col4tocol5 ease-out 1s reverse;
-    animation: col4tocol5 ease-out 1s reverse;
+    -moz-animation: col4tocol5 ease-out 0.45s reverse;
+    -o-animation: col4tocol5 ease-out 0.45s reverse;
+    -webkit-animation: col4tocol5 ease-out 0.45s reverse;
+    animation: col4tocol5 ease-out 0.45s reverse;
 }
 
 
