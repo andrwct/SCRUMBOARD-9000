@@ -45,8 +45,8 @@ function SetEventHandlers(){
             if(evt.shiftKey || evt.altKey)
                   createSticky();
 	});
-      
-      $(".frame").on("touchmove", function(e){            
+
+      $(".frame").on("touchmove", function(e){
             t2=e.touches[0];
             t2x=t2.pageX;
             t2y=t2.pageY;
@@ -62,7 +62,7 @@ function SetEventHandlers(){
             zIndexControl($(this));
       });
 
-   
+
 
       $("body").on("touchstart", function(){ window.clearTimeout(screensaverTimer); resetScreensaver()});
 
@@ -89,6 +89,9 @@ function createSticky() {
       $(".frame").append(newDiv);
       txtID++;
       touchTimeout=true;
+      // setTimeout(function(){},);
+      console.log("HI!");
+
 }
 
 /*
@@ -108,7 +111,7 @@ function resizeText(id){
 * Revision:
 *     SW - 12/5/13
 * Description:
-*     sets the translateX and translateY attribute of an element to a touch event's position 
+*     sets the translateX and translateY attribute of an element to a touch event's position
 * Parameters:
 *     element to drag, and the drag event
 */
@@ -149,7 +152,7 @@ function resetScreensaver() {
       screensaverTimer = setTimeout(function(){
             $(".screensaver").show();
              screensaverTimer2 = setTimeout(function(){resetScreensaver()}, ssResume);
-      },ssDelay);      
+      },ssDelay);
 }
 
 
